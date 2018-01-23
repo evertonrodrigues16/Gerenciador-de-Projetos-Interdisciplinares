@@ -1,0 +1,21 @@
+                                         <div id="ajax"><div id="scroll" class="table-responsive">
+                                              <table id="tabela" class="table <?php echo $class;?> table-bordered">
+                                                <thead>                            
+                                                    <tr <?php echo $theadClass;?> id="linhaCabecalho">
+                                                        <th>Cod</th>
+                                                        <th>Campus</th>                                               
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody>
+                                                <?php if (is_array($table)){?>
+                                                    <?php $dados = $table['1']; foreach ($dados as $linha){ ?>
+                                                    <tr ondblclick='getValores("tabela",<?php echo $i+1;?>,"2"); myFunction("grid2", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this) ' onclick='getValores("tabela",<?php echo $i+1;?>,"2"); myFunction("grid", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)'>
+                                                        <td><?php echo $linha['cod_campus'];?></td>
+                                                        <td><?php echo $linha['campus'];?></td>
+                                                    </tr>
+                                                    <?php $i++;
+                                                          } ?>
+                                                          <?php }?>
+                                                </tbody>
+                                              </table>
+                                            </div></div>        

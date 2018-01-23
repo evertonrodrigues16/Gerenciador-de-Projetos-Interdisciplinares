@@ -1,0 +1,59 @@
+                                         <div id="ajax"><div id="scroll" class="table-responsive">
+                                              <table id="tabela" class="table <?php echo $class;?> table-bordered">
+                                                <thead>                            
+                                                    <tr <?php echo $theadClass;?> id="linhaCabecalho">
+                                                        <th>Cod</th>
+                                                        <th>CNPJ</th>                                                         
+                                                        <th>Instituição</th> 
+                                                        <th>Nome Fantasia</th> 
+                                                        <th>Insc. Est</th>
+                                                        <th>Insc. Mun</th>
+                                                        <th>CEP</th>
+                                                        <th>Logradouro</th>
+                                                        <th>Número</th>
+                                                        <th>Complemento</th>
+                                                        <th>Bairro</th>
+                                                        <th>Cidade</th>
+                                                        <th>Estado</th>
+                                                        <th>Tel1</th>
+                                                        <th>Tel2</th>
+                                                        <th>Tel3</th>
+                                                        <th>Tel4</th>
+                                                        <th>Email</th>
+                                                        <th>Site</th>                                                        
+                                                        <th>Cadastrado por</th>
+                                                        <th>Logomarca</th>
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody>
+                                                <?php if (is_array($table)){?>
+                                                    <?php $dados = $table['1']; foreach ($dados as $linha){ ?>
+                                                    <tr ondblclick='getValores("tabela",<?php echo $i+1;?>,"19"); myFunction("grid2", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this) ' onclick='getValores("tabela",<?php echo $i+1;?>,"19"); myFunction("grid", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)'>
+                                                        <td><?php echo $linha['codinstituicao'];?></td>
+                                                        <td><?php echo $linha['cnpj'];?></td>
+                                                        <td><?php echo $linha['razaosocial'];?></td>
+                                                        <td><?php echo $linha['nomefantasia'];?></td>
+                                                        <td><?php echo $linha['inscestadual'];?></td>
+                                                        <td><?php echo $linha['inscmunicipal'];?></td>
+                                                        <td><?php echo $linha['cep'];?></td>
+                                                        <td><?php echo $linha['logradouro'];?></td>
+                                                        <td><?php echo $linha['numero'];?></td>
+                                                        <td><?php echo $linha['complemento'];?></td>
+                                                        <td><?php echo $linha['bairro'];?></td>
+                                                        <td><?php echo $linha['cidade'];?></td>
+                                                        <td><?php echo $linha['estado'];?></td>
+                                                        <td><?php echo $linha['tel1'];?></td>
+                                                        <td><?php echo $linha['tel2'];?></td>
+                                                        <td><?php echo $linha['tel3'];?></td>
+                                                        <td><?php echo $linha['tel4'];?></td>
+                                                        <td><?php echo $linha['emailinstituicao'];?></td>
+                                                        <td><?php echo $linha['site'];?></td>                                                        
+                                                        <td><?php echo $linha['nome'];?></td>
+                                                        <td><img src="<?php echo $linha['logomarca'];?>" alt="logo" height="25" width="25"></td>
+                                                    </tr>
+                                                    <?php $i++;
+                                                          } ?>
+                                                          <?php }?>
+                                                </tbody>
+                                              </table>
+                                            </div></div>        

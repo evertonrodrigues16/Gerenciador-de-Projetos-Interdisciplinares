@@ -1,0 +1,46 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <div class="text-center"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>  
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+                                        <form>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Nome Projeto:</span>
+                                                <input  maxlength="60" id="0" type="text" class="form-control" placeholder="Nome Projeto..." aria-describedby="sizing-addon2" name="nome_projeto" value="" required>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Palavras Chave:</span>
+                                                <input  maxlength="40" id="1" type="text" class="form-control" placeholder="Palavras Chave..." aria-describedby="sizing-addon2" name="palavras_chave" value="" required>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Curso:</span>
+                                                <select id="2" class="form-control" placeholder="Curso..." aria-describedby="sizing-addon2" name="cod_curso" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['2']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_curso'];?>"><?php echo $linha['curso'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <br>
+                                            
+                                            <div class="text-center">
+                                                <button onclick="ajaxConsultarprojeto(document.getElementById('0').value, document.getElementById('1').value, document.getElementById('2').options[document.getElementById('2').selectedIndex].value)" type="button" class="btn btn-primary">Pesquisar</button>
+                                                <button onclick="ajaxConsultarprojeto('', '', '')" type="reset" class="btn btn-primary">Limpar</button>
+                                            </div> 
+                                        </form>
+      </div>
+    </div>
+  </div>
+</div>     

@@ -1,0 +1,39 @@
+                                            <div id="ajax"><div id="scroll2" class="table-responsive">
+                                              <table id="tabela" class="table <?php echo $class;?> table-bordered">
+                                                <thead>                            
+                                                    <tr <?php echo $theadClass;?> id="linhaCabecalho">
+                                                        <th></th>
+                                                        <th>Cod</th>
+                                                        <th>Nome Projeto</th>                                                         
+                                                        <th>Palavras Chave</th> 
+                                                        <th>Objetivo</th> 
+                                                        <th>Resumo</th>
+                                                        <th>Arquivo</th>
+                                                        <th>Curso</th>
+                                                        <th>Orientador</th>
+                                                        <th>Semestre</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody>
+                                                <?php if (is_array($table)){?>
+                                                    <?php $dados = $table['1']; foreach ($dados as $linha){ ?>
+                                                    <tr>
+                                                        <td><a href="<?php echo "http://$_SERVER[HTTP_HOST]" . "/aprovacaoprojeto?cod_projeto=" . $linha['cod_projeto'];?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        <td><?php echo $linha['cod_projeto'];?></td>
+                                                        <td><?php echo $linha['nome_projeto'];?></td>
+                                                        <td><?php echo $linha['palavras_chave'];?></td>
+                                                        <td><?php echo $linha['objetivo'];?></td>
+                                                        <td><?php echo $linha['resumo'];?></td>
+                                                        <td><?php echo $linha['arquivo'];?></td>
+                                                        <td><?php echo $linha['curso'];?></td>
+                                                        <td><?php echo $linha['orientador'];?></td>
+                                                        <td><?php echo $linha['semestre'];?></td>
+                                                        <td><?php echo $linha['status'];?></td>
+                                                    </tr>
+                                                    <?php $i++;
+                                                          } ?>
+                                                          <?php }?>
+                                                </tbody>
+                                              </table>
+                                                </div></div>    

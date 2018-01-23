@@ -1,0 +1,24 @@
+                                            <div class="row"></div>                                            
+                                            <div id="scroll" class="table-responsive">
+                                              <table id="tabela" class="table table-striped table-bordered">
+                                                <thead>                             
+                                                    <tr id="linhaCabecalho">
+                                                        <th>Cod</th>
+                                                        <th>Integrante</th>
+                                                        <th>Projeto</th>                                              
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody><?php $i=0; ?>
+                                                <?php if (is_array($table)){?>
+                                                    <?php $dados = $table['6']; foreach ($dados as $linha){ ?>
+                                                       <tr onclick="window.open('<?php echo "/cadastrointegrantes?cod_projeto=". $table['1']['0']['cod_projeto'];?>', '_blank')">
+                                                        <td><?php echo $linha['cod_integrante'];?></td>
+                                                        <td><?php echo $linha['integrante'];?></td>
+                                                        <td><?php echo $linha['projeto'];?></td> 
+                                                    </tr>
+                                                    <?php $i++;
+                                                          } ?>
+                                                          <?php }?>
+                                                </tbody>
+                                              </table>
+                                            </div></div>        

@@ -1,0 +1,131 @@
+                  
+                                            <br>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Código Usuário:</span>
+                                                <input id="0" type="text" class="form-control" placeholder="Código Usuário..." aria-describedby="sizing-addon2" name="cod_usuario" value="" readonly>
+                                            </div></div>
+                                            <br>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Nome:</span>
+                                                <input maxlength="40" id="1" type="text" class="form-control" placeholder="Nome" aria-describedby="sizing-addon2" name="nome" value="" readonly required>
+                                            </div></div>
+                                            <br>
+                                            <?php 
+                                            if ($imprimir == "aluno" || $imprimir == ""){
+                                            echo'
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">RA:</span>
+                                                <input maxlength="40" id="2" type="text" class="form-control" placeholder="RA..." aria-describedby="sizing-addon2" name="ra" value="" readonly>
+                                            </div></div>
+                                            <br> '; } ?>
+                                            
+                                            <?php 
+                                            if ($imprimir == "professor" || $imprimir == ""){
+                                            echo'
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Login:</span>
+                                                <input maxlength="40"  id="3" type="text" class="form-control" placeholder="Login..." aria-describedby="sizing-addon2" name="login" value="" readonly>
+                                            </div></div>
+                                            <br> '; } ?>
+                                            <!--instituicao-->
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Curso:</span>
+                                                <select id="4" class="form-control" placeholder="Curso..." aria-describedby="sizing-addon2" name="cod_curso" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['2'];$dados = $dados['1']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_curso'];?>"><?php echo $linha['curso'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            <br>
+                                            <!--instituicao-->
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Campus:</span>
+                                                <select id="5" class="form-control" placeholder="Campus..." aria-describedby="sizing-addon2" name="cod_campus" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['3'];$dados = $dados['1']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_campus'];?>"><?php echo $linha['campus'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            <br>
+                                            <div class="form-group col-md-3"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Telefone:</span>
+                                                <input maxlength="15" id="6" type="text" class="form-control tel" placeholder="(00) 0000-0000..." aria-describedby="sizing-addon2" name="telefone1" value="" readonly>
+                                            </div></div>
+                                            <br>
+                                            <div class="form-group col-md-3"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Telefone:</span>
+                                                <input maxlength="15" id="7" type="text" class="form-control tel" placeholder="(00) 0000-0000..." aria-describedby="sizing-addon2" name="telefone2" value="" readonly>
+                                            </div></div>                                           
+                                            <br>
+                                            <div class="form-group col-md-6"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Email:</span>
+                                                <input id="8" type="email" class="form-control" placeholder="Email..." aria-describedby="sizing-addon2" name="email" readonly>
+                                            </div></div>    
+                                            <br>
+                                            <!--instituicao-->
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Perfil:</span>
+                                                <select id="9" class="form-control" placeholder="Perfil..." aria-describedby="sizing-addon2" name="cod_perfil" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['4'];$dados = $dados['1']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_perfil'];?>"><?php echo $linha['nome_perfil'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            <br>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Senha:</span>
+                                                <input id="10" type="password" class="form-control" placeholder="Senha..." aria-describedby="sizing-addon2" name="senha" value="" readonly required="">
+                                            </div></div>
+                                            <br>
+                                            <input type="hidden" id="99" value="<?php echo $imprimir; ?>" name="dados">
+                                            
+                                            <script>
+                                                if (document.getElementById('99').value == 'aluno' || document.getElementById('99').value == 'professor')
+                                                {
+                                                    document.getElementById('0').value = '<?php echo $table['1']['0']['cod_usuario'];?>';
+                                                    document.getElementById('1').value = '<?php echo $table['1']['0']['nome'];?>';
+                                                    document.getElementById(<?php if($imprimir=='aluno'){echo '2';$user='ra';}else{echo '3';$user='login';}?>).value = '<?php echo $table['1']['0'][$user];?>';
+
+                                                    for (var j=0; j<document.getElementById('4').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['curso'];?>';
+                                                            if (document.getElementById('4').options[j].innerHTML == str){
+                                                                document.getElementById('4').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                    }
+
+                                                    for (var j=0; j<document.getElementById('5').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['campus'];?>';
+                                                            if (document.getElementById('5').options[j].innerHTML == str){
+                                                                document.getElementById('5').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                    }
+
+                                                    document.getElementById('6').value = '<?php echo $table['1']['0']['telefone1'];?>';
+                                                    document.getElementById('7').value = '<?php echo $table['1']['0']['telefone2'];?>';
+                                                    document.getElementById('8').value = '<?php echo $table['1']['0']['email'];?>';
+
+                                                    for (var j=0; j<document.getElementById('9').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['nome_perfil'];?>';
+                                                            if (document.getElementById('9').options[j].innerHTML == str){
+                                                                document.getElementById('9').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                    }                                                
+                                                    document.getElementById('10').value = '<?php echo $table['1']['0']['senha'];?>';
+                                                }
+                                            </script>

@@ -1,0 +1,126 @@
+                                            
+                                            <br>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Código Projeto:</span>
+                                                <input id="0" type="text" class="form-control" placeholder="Código Projeto..." aria-describedby="sizing-addon2" name="cod_projeto" value="" readonly>
+                                            </div></div>   
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Nome Projeto:</span>
+                                                <input  maxlength="60" id="1" type="text" class="form-control" placeholder="Nome Projeto..." aria-describedby="sizing-addon2" name="nome_projeto" value="" readonly required>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Palavras Chave:</span>
+                                                <input  maxlength="40" id="2" type="text" class="form-control" placeholder="Palavras Chave..." aria-describedby="sizing-addon2" name="palavras_chave" value="" readonly required>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Objetivo:</span>
+                                                <textarea maxlength="500" id="3" class="form-control" placeholder="Objetivo..." aria-describedby="sizing-addon2" name="objetivo" readonly></textarea>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Resumo:</span>
+                                                <textarea maxlength="1000" id="4" class="form-control" placeholder="Resumo..." aria-describedby="sizing-addon2" name="resumo" readonly></textarea>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Curso:</span>
+                                                <select id="5" class="form-control" placeholder="Curso..." aria-describedby="sizing-addon2" name="cod_curso" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['2']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_curso'];?>"><?php echo $linha['curso'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Orientador:</span>
+                                                <select id="6" class="form-control" placeholder="Usuário..." aria-describedby="sizing-addon2" name="cod_usuario" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['3']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_usuario'];?>"><?php echo $linha['nome'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Semestre:</span>
+                                                <select id="7" class="form-control" placeholder="Semestre..." aria-describedby="sizing-addon2" name="cod_semestre" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['4']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_semestre'];?>"><?php echo $linha['semestre'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Status:</span>
+                                                <select id="8" class="form-control" placeholder="Status..." aria-describedby="sizing-addon2" name="cod_status_projeto" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['5']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_status_projeto'];?>"><?php echo $linha['status'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Arquivo:</span>
+                                                <input id="9" type="file" class="form-control" aria-describedby="sizing-addon2" name="arquivo">
+                                            </div></div>
+                                            
+                                           <?php include_once 'Table.phtml';;?>
+                                            
+                                            <div class="text-center" style="cursor:pointer" onclick="window.open('/<?php echo $table['1']['0']['arquivo'];?>', '_blank')">
+                                                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><div class="hidden-xs">Baixar Projeto</div>
+                                            </div><br>
+                                            
+                                            <script>
+                                                document.getElementById('0').value = '<?php echo $table['1']['0']['cod_projeto'];?>';
+                                                document.getElementById('1').value = '<?php echo $table['1']['0']['nome_projeto'];?>';
+                                                document.getElementById('2').value = '<?php echo $table['1']['0']['palavras_chave'];?>';
+                                                document.getElementById('3').value = '<?php echo $table['1']['0']['objetivo'];?>';
+                                                document.getElementById('4').value = "<?php echo $table['1']['0']['resumo'];?>";
+                                                
+                                                for (var j=0; j<document.getElementById('5').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['curso'];?>';
+                                                            if (document.getElementById('5').options[j].innerHTML == str){
+                                                                document.getElementById('5').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                }
+                                                for (var j=0; j<document.getElementById('6').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['orientador'];?>';
+                                                            if (document.getElementById('6').options[j].innerHTML == str){
+                                                                document.getElementById('6').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                }
+                                                for (var j=0; j<document.getElementById('7').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['semestre'];?>';
+                                                            if (document.getElementById('7').options[j].innerHTML == str){
+                                                                document.getElementById('7').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                }
+                                                for (var j=0; j<document.getElementById('8').options.length; j++){
+                                                            var str = '<?php echo $table['1']['0']['status'];?>';
+                                                            if (document.getElementById('8').options[j].innerHTML == str){
+                                                                document.getElementById('8').options[j].selected = true;
+                                                                break;
+                                                            }
+                                                }    
+                                            </script>

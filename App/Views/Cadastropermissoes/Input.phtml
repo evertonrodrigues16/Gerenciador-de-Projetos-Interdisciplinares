@@ -1,0 +1,64 @@
+                                            
+                                            <br>
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Código Permissão:</span>
+                                                <input id="0" type="text" class="form-control" placeholder="Código Permissão..." aria-describedby="sizing-addon2" name="cod_permissao" value="" readonly>
+                                            </div></div>   
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Perfil:</span>
+                                                <select id="1" class="form-control" placeholder="Perfil..." aria-describedby="sizing-addon2" name="cod_perfil" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['2'];$dados = $dados['1']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha['cod_perfil'];?>"><?php echo $linha['nome_perfil'];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                    } ?>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Adicionar Projeto:</span>
+                                                <select id="2" class="form-control" placeholder="Adicionar Projeto..." aria-describedby="sizing-addon2" name="adcionar_projeto" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <option value="Acesso Permitido">Acesso Permitido</option>
+                                                    <option value="Acesso Negado">Acesso Negado</option>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Editar Projeto:</span>
+                                                <select id="3" class="form-control" placeholder="Editar Projeto..." aria-describedby="sizing-addon2" name="editar_projeto" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <option value="Acesso Permitido">Acesso Permitido</option>
+                                                    <option value="Acesso Negado">Acesso Negado</option>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Excluir Projeto:</span>
+                                                <select id="4" class="form-control" placeholder="Excluir Projeto..." aria-describedby="sizing-addon2" name="excluir_projeto" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <option value="Acesso Permitido">Acesso Permitido</option>
+                                                    <option value="Acesso Negado">Acesso Negado</option>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Gerenciar Usuário:</span>
+                                                <select id="5" class="form-control" placeholder="Gerenciar Usuário..." aria-describedby="sizing-addon2" name="gerenciar_usuario" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <option value="Acesso Permitido">Acesso Permitido</option>
+                                                    <option value="Acesso Negado">Acesso Negado</option>
+                                                </select>
+                                            </div></div>
+                                            
+                                            <div class="form-group col-md-12"><div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">Aprovar Trabalho:</span>
+                                                <select id="6" class="form-control" placeholder="Aprovar Trabalho..." aria-describedby="sizing-addon2" name="aprovar_trabalho" value="" required>
+                                                    <option value="">Selecione uma opção...</option>
+                                                    <option value="Acesso Permitido">Acesso Permitido</option>
+                                                    <option value="Acesso Negado">Acesso Negado</option>
+                                                </select>
+                                            </div></div>

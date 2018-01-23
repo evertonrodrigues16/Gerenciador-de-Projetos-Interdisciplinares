@@ -1,0 +1,23 @@
+                                         <div id="ajax"><div id="scroll" class="table-responsive">
+                                              <table id="tabela" class="table <?php echo $class;?> table-bordered">
+                                                <thead>                            
+                                                    <tr <?php echo $theadClass;?> id="linhaCabecalho">
+                                                        <th>Cod</th>
+                                                        <th>Integrante</th>
+                                                        <th>Projeto</th>
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody>
+                                                <?php if (is_array($table)){?>
+                                                    <?php $dados = $table['3']; foreach ($dados as $linha){ ?>
+                                                    <tr ondblclick='getValores("tabela",<?php echo $i+1;?>,"3"); myFunction("grid2", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this) ' onclick='getValores("tabela",<?php echo $i+1;?>,"3"); myFunction("grid", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)'>
+                                                        <td><?php echo $linha['cod_integrante'];?></td>
+                                                        <td><?php echo $linha['integrante'];?></td>
+                                                        <td><?php echo $linha['projeto'];?></td>
+                                                    </tr>
+                                                    <?php $i++;
+                                                          } ?>
+                                                          <?php }?>
+                                                </tbody>
+                                              </table>
+                                            </div></div>        

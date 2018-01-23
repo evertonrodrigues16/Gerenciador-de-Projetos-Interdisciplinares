@@ -1,0 +1,7 @@
+                                                    <option value=""></option>
+                                                    <?php if (is_array($table)){?>
+                                                    <?php $i=0; $dados = $table['1']; foreach ($dados as $linha){;?>
+                                                    <option value="<?php echo $linha[$campo1];?>"><?php echo $linha[$campo2];?></option>
+                                                        <?php } ?>
+                                                    <?php $i++;
+                                                          } ?>

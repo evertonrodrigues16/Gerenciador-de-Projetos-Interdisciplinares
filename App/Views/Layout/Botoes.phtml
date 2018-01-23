@@ -1,0 +1,12 @@
+
+<!-- Início Botoes Dinâmicos -->  
+<div class="text-center">
+                <button onclick='myFunction("novo", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)' id="btnNovo" type="reset" class="btn <?php echo $tamanho;?> btn-default" disabled><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><div class="hidden-xs"> Novo</div></button>
+                <button id="btnSalvar" class="btn <?php echo $tamanho;?> btn-primary" type="submit" name="submit" value="salvar" disabled><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span><div class="hidden-xs"> Salvar</div></button>
+                <button id="btnAtualizar" class="btn <?php echo $tamanho;?> btn-success" type="submit" name="submit" value="atualizar" disabled><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span><div class="hidden-xs"> Atualizar</div></button>
+                <button onclick='myFunction("editar", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)' id="btnEditar" type="button" class="btn <?php echo $tamanho;?> btn-info" disabled><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><div class="hidden-xs"> Editar</div></button>
+                <a href="<?php echo $cmd;?>"><button onclick='myFunction("cancelar", "btnNovo", "btnSalvar", "btnAtualizar", "btnEditar", "btnCancelar", "btnExcluir", this)' id="btnCancelar" type="button" class="btn <?php echo $tamanho;?> btn-warning"  disabled><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span><div class="hidden-xs"> Cancelar</div></button></a>
+                <button id="btnExcluir" class="btn <?php echo $tamanho;?> btn-danger" type="submit" name="submit" value="excluir" disabled><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><div class="hidden-xs"> Excluir</div></button>
+                <br>
+</div>                
+<!-- Fim Botões Dinâmicos -->

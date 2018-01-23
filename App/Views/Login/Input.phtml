@@ -1,0 +1,48 @@
+                                            <!--h3>Entre no sistema</h3-->
+                                            <script>
+                                                function aluno (){
+                                                    elemento = document.getElementById('0');
+                                                    elemento.name = 'ra';
+                                                    elemento.placeholder = 'RA...';
+                                                    span = document.getElementById('3');
+                                                    span.innerHTML = 'RA:';
+                                                }
+                                                function professor(){
+                                                    elemento = document.getElementById('0');
+                                                    elemento.name = 'login';
+                                                    elemento.placeholder = 'Login...';
+                                                    span = document.getElementById('3');
+                                                    span.innerHTML = 'Login:';
+                                                }
+                                            </script>
+                                            <div class="breadcrumb"><br>
+                                            <div class="row">
+                                                <img src="temp/Logos/school.png" class="img-responsive center-block" alt="School" width="140">
+                                            </div>
+                                            <br>
+                                            <h3 class="text-center">Acesso Restrito</h3>
+                                            </div>
+                                                <div class="input-group">
+                                                    <label class="radio-inline"><input onclick="aluno()" type="radio" name="usuario" checked="true">Aluno</label>
+                                                    <label class="radio-inline"><input onclick="professor()" type="radio" name="usuario">Professor</label>
+                                                </div> 
+                                                <br>
+                                                <div class="input-group">
+                                                    <span id="3" class="input-group-addon" id="sizing-addon2">RA:</span>
+                                                    <input id="0" type="text" class="form-control" placeholder="RA..." aria-describedby="sizing-addon2" name="ra" value="" required autofocus>
+                                                </div> 
+                                                <br>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" id="sizing-addon2">Senha:</span>
+                                                    <input id="1" type="password" class="form-control" placeholder="Senha..." aria-describedby="sizing-addon2" name="senha" value="" required>
+                                                </div> 
+                                                <br>
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="login">Entrar</button>
+                                                <br>
+                                                <div class="row text-center">
+                                                    <a href="<?php echo "http://$_SERVER[HTTP_HOST]/aluno"; ?>">Sou aluno e desejo me registrar...</a>
+                                                </div>
+                                                <br>
+                                                <div class="row text-center">
+                                                    <a href="<?php echo "http://$_SERVER[HTTP_HOST]/professor"; ?>">Sou professor e desejo me registrar...</a>
+                                                </div>

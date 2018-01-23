@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+            <h1>Bem vindo, <small><?php echo $_SESSION['nome'];?>!</small></h1>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="text-center">    
+    <div class="col-lg-12">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-3">
+              <a href="<?php echo "http://$_SERVER[HTTP_HOST]/postagemprojeto";?>">
+                <div class="feature-item">
+                  <img src="temp/Imagens/postar.png" alt="..." class="img-rounded">
+                  <h3>Postar projeto</h3>
+                  <p class="text-muted">Criar novo projeto</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="<?php echo "http://$_SERVER[HTTP_HOST]/consultaprojeto";?>">
+                    <div class="feature-item">
+                      <img src="temp/Imagens/consultar.png" alt="..." class="img-rounded">
+                      <h3>Consultar projeto</h3>
+                      <p class="text-muted">Listar todos os projetos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="<?php echo "http://$_SERVER[HTTP_HOST]/analiseprojeto";?>">
+                    <div class="feature-item">
+                      <img src="temp/Imagens/aprovar.png" alt="..." class="img-rounded">
+                      <h3>Aprovar projeto</h3>
+                      <p class="text-muted">Avaliar projetos pendentes</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3"><?php if(isset($_SESSION['codusuario'])){ $ra = $_SESSION['codusuario']; $usuario = $_SESSION['usuario'];}else{ $usuario="";$ra=""; } ?>
+              <a href="<?php echo "http://$_SERVER[HTTP_HOST]/$usuario?cod-usuario=$ra&submit=consultar"; ?>">
+                <div class="feature-item">
+                  <img src="temp/Imagens/usuario.png" alt="..." class="img-rounded">
+                  <h3>Meu perfil</h3>
+                  <p class="text-muted">Editar meu perfil de usuário</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

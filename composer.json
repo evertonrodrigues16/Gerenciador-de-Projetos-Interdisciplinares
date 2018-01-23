@@ -1,0 +1,17 @@
+{
+    "name":"Una Projetos",
+    "require":{
+    	"php":">=5.6"
+    },
+    "authors":[
+	{
+       	"name":"Grupo 6: Breno Pereira, Eduardo Rufino, Everton Rodrigues, Marco Tulio, Matheus Fernandes, Victor Lopes e Vitor Lucas",
+		"email":"evertonrodrigues22@hotmail.com"
+	}
+    ],
+    "autoload":{
+        "psr-4":{
+            "App\\": "App"
+        }
+    }
+}
